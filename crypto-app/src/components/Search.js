@@ -3,6 +3,7 @@ import searchIcon from "../assets/search-icon.svg";
 import { CryptoContext } from '../context/CryptoContext';
 
 const SearchInput = ({ handleInput, searchText }) => {
+   let {searchData}=useContext(CryptoContext);
     return (
         <>
             <form className='w-96 relative flex items-center ml-7 font-nunito'>
