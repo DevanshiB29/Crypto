@@ -21,10 +21,15 @@ const SearchInput = ({ handleInput, searchText }) => {
             </form>
             {
                 searchText.length > 0 &&
-                <ul className='absolute top-11 right-0 w-full h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md'>
+                <ul className='absolute top-11 right-0 w-96 h-96 rounded overflow-x-hidden py-2 bg-gray-200 bg-opacity-60 backdrop-blur-md'>
                     {
                         searchData?
-                        searchData.map(coin=>{return <li>{coin.id}</li>})
+                        searchData.map(coin=>{return <li className='flex items-center ml-4 my-2 cursor-pointer' key={coin.id}>
+                            <img  className="w-[1rem] h-[1.2rem] mx-1.5"src={coin.thumb}  alt={coin.name}/>
+                            <span>{coin.name}</span>
+                        
+                        </li>})
+                        :<h2>please wait...</h2>
                     }
                 </ul>
             }
@@ -62,7 +67,10 @@ const Search = () => {
     };
 
     return (
+        <div className='relative'>
         <SearchInput handleInput={handleInput} searchText={searchText} />
+        </div>
+   
     );
 };
 
