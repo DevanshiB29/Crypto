@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { CryptoContext } from "../context/CryptoContext";
+import Pagination from "./Pagination";
 
 const TableComponent = () => {
   let { cryptoData, currency } = useContext(CryptoContext);
   return (
+    <>
     <div className="flex flex-col mt-9 border border-gray-100 rounded">
       {cryptoData ? (
         <table className="w-full table-auto">
@@ -70,8 +72,15 @@ const TableComponent = () => {
           </tbody>
         </table>
       ) : null}
+      
     </div>
-  );
+    <div>
+      <span>Data provided by <a href="http://www.coingecko.com" rel="noreferrer" target={"blank"}></a></span>
+      <Pagination/>
+    </div>
+  
+    </>
+    );
 };
 
 export default TableComponent;
