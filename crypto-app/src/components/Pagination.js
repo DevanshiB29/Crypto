@@ -1,9 +1,13 @@
 import React from 'react'
-
+import paginationArrow from ""
 const Pagination = () => {
   return (
-    <div>
-      
+    <div className='flex item-center'>
+      <ul>
+        <li>
+
+        </li>
+      </ul>
     </div>
   )
 }
