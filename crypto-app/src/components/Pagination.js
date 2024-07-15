@@ -5,18 +5,20 @@ const Pagination = () => {
     <div className='flex item-center'>
       <ul className='flex item-center justify-end text-sm'>
         <li className='flex items-center'>
-          <button className='outline hover:text-cyan w-8'>
+          <button className='outline-0 hover:text-cyan w-8'>
           <img className='w-full h-auto rotate-180' src={paginationArrow} alt="left"/>
           </button>
         </li>
-        <li><button>...</button></li>
-        <li><button>1</button></li>
-        <li><button>2</button></li>
-        <li><button>3</button></li>
-        <li>...</li>
-        <li>last page</li>
+        <li><button className='outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center text-lg'>...</button></li>
+        <li><button className='outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center bg-gray-200 mx-1.5'>1</button></li>
+        <li><button className='outline-0 rounded-full w-8 h-8 flex items-center justify-center bg-cyan  text-gray-300 mx-1.5'>2</button></li>
+        <li><button className='outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center  bg-gray-200 mx-1.5'>3</button></li>
+        <li><button className='outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center text-lg'>...</button></li>
+        <li><button className='outline-0 hover:text-cyan rounded-full w-8 h-8 flex items-center justify-center  bg-gray-200 mx-1.5'>100</button></li>
         <li>
-          <img className='w-full h-auto' src={paginationArrow} alt="left"/>
+          <button className='outline-0 hover:text-cyan w-8'>
+          <img className='w-full h-auto' src={paginationArrow} alt="right"/>
+          </button>
         </li>
       </ul>
     </div>
