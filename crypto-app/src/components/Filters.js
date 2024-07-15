@@ -5,7 +5,7 @@ import selectIcon from '../assets/select-icon.svg';
 import { CryptoContext } from '../context/CryptoContext'; // Adjust path as needed
 
 const Filters = () => {
-  const { setCurrency, setSortBy } = useContext(CryptoContext);
+  const { setCurrency, setSortBy, resetFunction } = useContext(CryptoContext);
   const currencyRef = useRef(null);
 
   const handleCurrencySubmit = (e) => {
@@ -56,6 +56,10 @@ const Filters = () => {
         </select>
         <img src={selectIcon} alt="submit" className='w-[1rem] h-auto absolute right-1 top-2 pointer-events-none' />
       </label>
+      <button className='w-[2rem] ml-4'
+      onClick={resetFunction}>
+        reset
+      </button>
       </div>
       
     </div>
