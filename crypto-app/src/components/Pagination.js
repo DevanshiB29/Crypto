@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import paginationArrow from "../assets/pagination-arrow.svg"
 const Pagination = () => {
+  const[currentPage, setCurrentPage]=useState(1);
+
+  const TotalNumber= 250;
+
+  const next=()=>{
+    if(currentPage==TotalNumber){
+      return null;
+    }
+    else{
+      setCurrentPage(currentPage+1);
+    }
+  }
+  const prev=()=>{
+    if(currentPage==1){
+      return null;
+    }
+    else{
+      setCurrentPage(currentPage-1);
+    }
+  }
   return (
     <div className='flex item-center'>
       <ul className='flex item-center justify-end text-sm'>
