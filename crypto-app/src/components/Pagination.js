@@ -1,6 +1,35 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import paginationArrow from "../assets/pagination-arrow.svg"
 import { CryptoContext } from '../context/CryptoContext';
+import submitIcon from '../assets/submit-icon.svg'
+
+const PerPage=()=>{
+  const inputRef= useRef(null);
+  return(
+    <form className='relative flex items-center font-nunito mr-12' 
+    //onSubmit={handleCurrencySubmit}
+    >
+          <label htmlFor="perpage" className='relative flex justify-center items-center mr-2 font-bold'>
+            perpage:{" "}
+          </label>
+          <input
+            id="perpage"
+            type="number"
+            name='perpage'
+            min={1}
+            max={250}
+            ref={inputRef}
+            placeholder='10'
+            className='w-16 rounded bg-gray-200 placeholder:text-gray-400 pl-2 required outline-0 border border-transparent focus:border-cyan leading-4'
+          />
+          <button type="submit" className='ml-1 cursor-pointer'>
+            <img src={submitIcon} alt="submit" className='w-full h-auto' />
+          </button>
+        </form>
+  )
+}
+
+
 const Pagination = () => {
    let {page, setPage, totalPages} =useContext(CryptoContext);
     const TotalNumber= Math.ceil(totalPages/10);
@@ -40,6 +69,7 @@ const Pagination = () => {
   }
   return (
     <div className='flex item-center'>
+      <PerPage/>
       <ul className='flex item-center justify-end text-sm'>
         <li className='flex items-center'>
           <button className='outline-0 hover:text-cyan w-8' onClick={prev}>
