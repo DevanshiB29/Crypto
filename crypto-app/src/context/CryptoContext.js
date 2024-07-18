@@ -69,7 +69,7 @@ export const CryptoProvider = ({ children }) => {
     }, [coinSearch, currency, sortBy, page, perPage]);
 
     return (
-        <CryptoContext.Provider value={{ cryptoData, searchData, getSearchResult, setCoinSearch ,setSearchData, currency,setCurrency, sortBy,setSortBy, page ,setPage, totalPages, resetFunction, perPage}}>
+        <CryptoContext.Provider value={{ cryptoData, searchData, getSearchResult, setCoinSearch ,setSearchData, currency,setCurrency, sortBy,setSortBy, page ,setPage, totalPages, resetFunction, perPage,setPerPage}}>
             {children}
         </CryptoContext.Provider>
     );

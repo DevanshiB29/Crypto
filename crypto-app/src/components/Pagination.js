@@ -4,10 +4,19 @@ import { CryptoContext } from '../context/CryptoContext';
 import submitIcon from '../assets/submit-icon.svg'
 
 const PerPage=()=>{
+  const {setPerPage}=useContext(CryptoContext);
   const inputRef= useRef(null);
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    let val= inputRef.current.value;
+    if(val!==0){
+      setPerPage(val);
+    }
+  }
   return(
     <form className='relative flex items-center font-nunito mr-12' 
-    //onSubmit={handleCurrencySubmit}
+    onSubmit={handleSubmit}
     >
           <label htmlFor="perpage" className='relative flex justify-center items-center mr-2 font-bold'>
             perpage:{" "}
@@ -31,8 +40,8 @@ const PerPage=()=>{
 
 
 const Pagination = () => {
-   let {page, setPage, totalPages} =useContext(CryptoContext);
-    const TotalNumber= Math.ceil(totalPages/10);
+   let {page, setPage, totalPages, perPage} =useContext(CryptoContext);
+    const TotalNumber= Math.ceil(totalPages/perPage);
   
 
   const next=()=>{
