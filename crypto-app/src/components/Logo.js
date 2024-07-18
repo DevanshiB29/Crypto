@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Link to="/" className='absolute top-[1.5rem] left-[1.5rem] [text-decoration:none]
     text-lg text-cyan flex items-center'>
-        <img src={logoSvg} alt="CryptoBucks" />
+        <img src={logoSvg} alt="CryptoChucks" />
         <span>CryptoBucks</span>
     </Link>    
   )
